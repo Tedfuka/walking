@@ -1,0 +1,64 @@
+// Place all the styles related to the steps controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.avatar {
+  padding-top: 15px;
+  max-height: 200px;
+  width:100%;
+  object-fit: contain;
+}
+
+.body_container {
+  margin: auto;
+  width: 400px;
+}
+
+.top-a {
+  color: #000;
+}
+
+.star-rating {
+  position: relative;
+  width: 5em;
+  height: 1em;
+  font-size: 25px;
+
+}
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #ffcc33;
+}
+.star-rating-back {
+  color: #ccc;
+}
+
+.edit_btn {
+  margin-top: 20px;
+}
+
+.btn_text a{
+  color: white;
+}
+
+.form_wrap {
+  width: 500px;
+  margin: 30px auto 0;
+}
+
+.wrap {
+  width: 250px;
+  margin: 30px auto 0;
+}
+@media only screen and (max-width:600px){
+  .p_title {
+  font-size: 1.4rem !important; /*0px以上で適用する内容*/
+  }
+.form_wrap {
+  width: 90%;
+  margin: 30px auto 0;
+}
+}

@@ -1,0 +1,24 @@
+<div class="wrap">
+
+<% if user_signed_in? %>
+<div class="center">
+<%= link_to '歩数登録画面へ', new_step_path(current_user.id), method: :get ,class: "btn indigo accent-4" %>
+</div>
+
+<p>⭐️平均歩数ランキング⭐️</p>
+
+<p>🔸チーム別</p>
+<% @teams.each do |team,step| %>
+<p><%= @i %>位 <%= team %>：<%= step.round().to_s(:delimited) %>歩</p>
+<% @i+=1 %>
+<% end %>
+
+<p>🔸個人別</p>
+<% @users.each do |user, step| %>
+<p><%= @j %>位 <%= User.find(user).username %>：<%= step.round().to_s(:delimited) %>歩（<%= User.find(user).team %>）</p>
+<% @j+=1 %>
+<% end %>
+
+<% end %>
+
+</div>

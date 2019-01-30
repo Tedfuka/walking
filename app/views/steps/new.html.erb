@@ -1,0 +1,27 @@
+<div class="form_wrap">
+
+<%= form_for @step do |f| %>
+
+<div class="input-field">
+  <%= f.date_field :date %>
+</div>
+
+<div class="input-field">
+  <%= f.label :歩数 %>
+  <%= f.text_field :step %>
+</div>
+
+<div class="row">
+  <div class="col10 center">
+    <%= button_tag type: "submit", class: "btn btn--block" do %>
+    登録する<i class="icon-arrow-right"></i>
+    <% end %>
+  </div>
+</div>
+<% end %>
+
+<% @steps.each do |step| %>
+<p><%= step.date.to_date %> <%= step.step.to_s(:delimited) %>歩</p>
+<% end %>
+
+</div>

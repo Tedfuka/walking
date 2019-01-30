@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Walking</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+ </head>
+  <body>
+    <header>
+      <nav class="#304ffe indigo accent-4">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo p_title"> ⭐️ウォーキング⭐️</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fas fa-bars"></i></a>
+
+          <ul class="right hide-on-med-and-down">
+      <% if user_signed_in? %>
+        <div class="user_nav grid-6">
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        </div>
+      <% else %>
+        <div class="grid-6">
+          <li><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
+          <li><%= link_to "新規登録", new_user_registration_path, class: 'post' %></li>
+        </div>
+      <% end %>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+      <% if user_signed_in? %>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+          <li><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
+          <li><%= link_to "新規登録", new_user_registration_path, class: 'post' %></li>
+      <% end %>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <%= yield %>
+    <footer>
+    </footer>
+  </body>
+</html>

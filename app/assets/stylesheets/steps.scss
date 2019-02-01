@@ -53,12 +53,23 @@
   width: 250px;
   margin: 30px auto 0;
 }
+
 @media only screen and (max-width:600px){
   .p_title {
   font-size: 1.4rem !important; /*0px以上で適用する内容*/
   }
-.form_wrap {
-  width: 90%;
-  margin: 30px auto 0;
+  .form_wrap {
+    width: 90%;
+    margin: 30px auto 0;
+  }
 }
+
+@media only screen and (max-width:350px){
+  .p_title {
+  font-size: 1.2rem !important; /*0px以上で適用する内容*/
+  }
+  .form_wrap {
+    width: 90%;
+  }
 }
+

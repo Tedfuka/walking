@@ -1,0 +1,21 @@
+<div class="form_wrap">
+
+<%= form_for @step do |f| %>
+
+<div>
+  <%= f.label :日付 %>
+  <%= f.date_field :date %>
+</div>
+
+<div class="input-field">
+  <%= f.label :歩数 %>
+  <%= f.text_field :step %>
+</div>
+
+<div class="center">
+  <%= f.submit "修正する" %>
+</div>
+
+<% end %>
+
+</div>

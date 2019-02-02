@@ -14,16 +14,33 @@
   <%= f.text_field :step %>
 </div>
 
-<div class="center">
-  <%= f.submit "登録する" ,class: "btn" %>
+<div class="actions center">
+  <%= f.submit "👣", :style=>"font-size: 3em;" %>
 </div>
 
 <% end %>
 
 <p class="center"><b>歩数履歴</b></p>
 
+<div>
+<style>
+  th:nth-child(1), td:nth-child(1) { padding: 5px; width: 90px; text-align: left;}
+  th:nth-child(2), td:nth-child(2) { padding: 5px; width: 90px; text-align: right;}
+  th:nth-child(3), td:nth-child(3) { padding: 5px; width: 70px; text-align: right;}
+  th:nth-child(4), td:nth-child(4) { padding: 5px; width: 70px; text-align: right;}
+  thead, tbody { display: block; }
+  tbody { height: 300px; overflow-y: scroll; }
+</style>
+<table width="100%" border="1px" cellpadding="1px" style="border-collapse: collapse;">
+  <thead>
+    <!--<tr bgcolor="#81d4fa"><th class="center">順位</th><th class="center">名前</th><th class="center">歩数</th><th class="center">チーム</th></tr>-->
+  </thead>
+  <tbody>
 <% @steps.each do |step| %>
-<p><%= link_to '修正', edit_step_path(step.id), method: :get %>　　<%= link_to '削除', step_path(step.id), method: :delete, data: {confirm: "本当に削除しますか？"}%>　　<%= step.date.to_date %> <%= step.step.to_s(:delimited) %>歩</p>
+<tr><td><%= step.date.to_date %></td><td><%= step.step.to_s(:delimited) %>歩</td><td><%= link_to '修正', edit_step_path(step.id), method: :get %></td><td><%= link_to '削除', step_path(step.id), method: :delete, data: {confirm: "本当に削除しますか？"}%></td></tr>
 <% end %>
+  </tbody>
+</table>
+</div>
 
 </div>

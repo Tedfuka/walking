@@ -13,16 +13,21 @@
  </head>
   <body>
     <header>
-      <nav class="#304ffe indigo accent-4">
+      <nav class="#1565c0 blue darken-3">
         <div class="nav-wrapper">
-          <a href="/" class="brand-logo p_title"> ⭐️ウォーキング⭐️</a>
+          <a href="/" class="brand-logo center p_title"><b>WALKING AKB</b></a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fas fa-bars"></i></a>
-
-          <ul class="right hide-on-med-and-down">
+      <% if user_signed_in? %>
+          <ul class="right">
+          <li><%= link_to '👟', new_step_path(current_user.id), method: :get, :style=>"font-size: 2em;" %></li>
+          </ul>
+      <% end %>
+          <ul class="left hide-on-med-and-down">
       <% if user_signed_in? %>
         <div class="user_nav grid-6">
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-        </div>
+          <li><%= link_to 'みんなの歩数', step_path(current_user.id), method: :get %></li>
+          </div>
       <% else %>
         <div class="grid-6">
           <li><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
@@ -33,6 +38,7 @@
           <ul class="side-nav" id="mobile-demo">
       <% if user_signed_in? %>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to 'みんなの歩数', step_path(current_user.id), method: :get %></li>
       <% else %>
           <li><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
           <li><%= link_to "新規登録", new_user_registration_path, class: 'post' %></li>
@@ -43,6 +49,9 @@
     </header>
     <%= yield %>
     <footer>
+      <!--<nav class="#1565c0 blue darken-3">
+          <p class="center"><b>平均10,000歩を目指そう！</b></p>
+      </nav>-->
     </footer>
   </body>
 </html>

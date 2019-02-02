@@ -40,23 +40,55 @@
   margin-top: 20px;
 }
 
-.btn_text a{
-  color: white;
+input.btn {
+  color: black;
+  background-color: #90caf9 !important;
 }
 
 .form_wrap {
   width: 500px;
-  margin: 30px auto 0;
+  margin: 15px auto 0;
 }
 
 .wrap {
-  width: 250px;
-  margin: 30px auto 0;
+  width: 280px;
+  margin: 15px auto 0;
+}
+
+.actions {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+p.center {
+  margin: 4px;
+}
+
+table.yyy tbody.zzz {
+  height: 100px;
+}
+
+table.yyy td.aaa {
+  padding: 5px;
+  width: 50px;
+  text-align: right;
+}
+
+table.yyy td.bbb {
+  padding: 5px;
+  width: 160px;
+  text-align: center;
+}
+
+table.yyy td.ccc {
+  padding: 5px;
+  width: 80px;
+  text-align: right;
 }
 
 @media only screen and (max-width:600px){
   .p_title {
-  font-size: 1.4rem !important; /*0px以上で適用する内容*/
+    font-size: 1.4rem !important; /*0px以上で適用する内容*/
   }
   .form_wrap {
     width: 90%;
@@ -66,7 +98,7 @@
 
 @media only screen and (max-width:350px){
   .p_title {
-  font-size: 1.2rem !important; /*0px以上で適用する内容*/
+    font-size: 1.2rem !important; /*0px以上で適用する内容*/
   }
   .form_wrap {
     width: 90%;

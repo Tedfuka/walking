@@ -10,7 +10,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <link rel="apple-touch-icon" sizes="180x180" href="app/assets/images/apple-touch-icon-180x180.png">
+  <%= favicon_link_tag('apple-touch-icon-180x180.png',
+                     {:rel => 'apple-touch-icon',
+                      :sizes => '180x180',
+                      :type => 'image/png'}) %>
+  <!--  <link rel="apple-touch-icon" sizes="180x180" href="app/assets/images/apple-touch-icon-180x180.png">-->
  </head>
   <body>
     <header>

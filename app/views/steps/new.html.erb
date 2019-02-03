@@ -20,7 +20,9 @@
 
 <% end %>
 
-<p class="center"><b>歩数履歴</b></p>
+<p class="center">一日平均10,000歩まで<br>あと一日平均<%= ((10000*28 - @step_sum)/@date_count).to_s(:delimited) %>歩 必要です！</p>
+
+<p class="center2"><b>歩数履歴</b></p>
 
 <div>
 <style>

@@ -2,8 +2,8 @@
 
 <% if user_signed_in? %>
 
-<p class="center">お疲れ様です！</p>
-<p class="left"><font color="red">🙇‍♂️歩数管理(右上)みんなの歩数(左上)です。<br>🙆‍♂編集・削除機能を追加しました。</font></p>
+<p class="center">勝手にアプリ更新中　笑</p>
+<p class="left"><font color="red">🙇‍♂️歩数管理(右上)みんなの歩数(左上)<br>🙆‍♂編集・削除機能を追加<br>🙆‍♂神セブンは累計、みんなの歩数は平均<br>🙆‍♂みんなの歩数に入力最新日付追加</font></p>
 
 <p class="center"><b style="font-size: 1.4em">〜　RANKING　〜</b></p>
 <div>
@@ -25,12 +25,12 @@
 <style>
   th:nth-child(1), td:nth-child(1) { padding: 5px; width: 50px; text-align: right;}
   th:nth-child(2), td:nth-child(2) { padding: 5px; width: 130px; text-align: center;}
-  th:nth-child(3), td:nth-child(3) { padding: 5px; width: 30px; text-align: center;}
+  th:nth-child(3), td:nth-child(3) { padding: 5px; width: 30px; text-align: left;}
   th:nth-child(4), td:nth-child(4) { padding: 5px; width: 80px; text-align: right;}
   thead, tbody { display: block; }
   tbody { height: 100%; overflow-y: scroll; }
 </style>
-  <p class="center"><span style="font-size: 1.5em">🏃‍</span>神セブン</p>
+  <p class="center"><span style="font-size: 1.5em">🏃‍</span>神セブン(得歩数)</p>
 <table width="100%" border="1px" cellpadding="1px" style="border-collapse: collapse;">
   <thead>
     <!--<tr bgcolor="#81d4fa"><th class="center">順位</th><th class="center">名前</th><th class="center">歩数</th><th class="center">チーム</th></tr>-->
@@ -40,10 +40,13 @@
     <tr><td><%= @j %>位</td><td><%= User.find(user).username %></td><td><%= User.find(user).team %></td><td><%= step.round().to_s(:delimited) %>歩</td></tr>
     <% @j+=1 %>
     <% end %>
+
   </tbody>
 </table>
 </div>
 
 <% end %>
+
+
 
 </div>

@@ -3,7 +3,7 @@
 <% if user_signed_in? %>
 
 <p class="center">勝手にアプリ更新中　笑</p>
-<p class="left"><font color="red">🙇‍♂️歩数管理(右上)みんなの歩数(左上)<br>🙆‍♂編集・削除機能を追加<br>🙆‍♂神セブンは累計、みんなの歩数は平均<br>🙆‍♂みんなの歩数に入力最新日付追加</font></p>
+<p class="left"><font color="red">🙇‍♂️歩数管理(右上)みんなの歩数(左上)<br>🙆‍♂編集・削除機能を追加<br>🙆‍♂神セブンは累計、みんなの歩数は平均<br>🙆‍♂入力済の最新日付が分かるように追記</font></p>
 
 <p class="center"><b style="font-size: 1.4em">〜　RANKING　〜</b></p>
 <div>
@@ -24,7 +24,7 @@
 <div>
 <style>
   th:nth-child(1), td:nth-child(1) { padding: 5px; width: 10px; text-align: right;}
-  th:nth-child(2), td:nth-child(2) { padding: 5px; width: 100px; text-align: center;}
+  th:nth-child(2), td:nth-child(2) { padding: 5px; width: 120px; text-align: center;}
   th:nth-child(3), td:nth-child(3) { padding: 5px; width: 10px; text-align: center;}
   th:nth-child(4), td:nth-child(4) { padding: 5px; width: 100px; text-align: right;}
   th:nth-child(5), td:nth-child(5) { padding: 5px; width: 70px; text-align: right;}
@@ -38,7 +38,7 @@
   </thead>
   <tbody>
     <% @users.first(7).each do |user, step| %>
-    <tr><td><%= @j %></td><td><%= User.find(user).username %></td><td><%= User.find(user).team %></td><td><%= step.round().to_s(:delimited) %>歩</td><td><%= @date_desc.where(user_id: user).select(:date).order(:date).last.date.strftime("%m-%d") %></td></tr>
+    <tr><td><%= @j %></td><td><%= User.find(user).username %></td><td><%= User.find(user).team %></td><td><%= step.round().to_s(:delimited) %>歩</td><td><%= @date_feb.where(user_id: user).select(:date).order(:date).last.date.strftime("%m-%d") %></td></tr>
     <% @j+=1 %>
     <% end %>
 

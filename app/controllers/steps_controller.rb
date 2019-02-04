@@ -5,7 +5,7 @@ class StepsController < ApplicationController
     @users = steps2.group(:user_id).order('sum_step DESC').sum(:step)
     @i = 1
     @j = 1
-    @date_desc = Step.where("date between '2019-02-01 00:00:00' and '2019-2-28 23:59:59'")
+    @date_feb = Step.where("date between '2019-02-01 00:00:00' and '2019-2-28 23:59:59'")
     #find(:first,:conditions => [ "user_id = ?", :user_id ], :order => "date DESC")
     #Step.where("date between '2019-02-01 00:00:00' and '2019-2-28 23:59:59'").order('date DESC')
   end
@@ -49,7 +49,7 @@ class StepsController < ApplicationController
     @users = steps2.group(:user_id).order('average_step DESC').average(:step)
     @i = 1
     @j = 1
-    @date_desc = Step.where("date between '2019-02-01 00:00:00' and '2019-2-28 23:59:59'")
+    @date_feb = Step.where("date between '2019-02-01 00:00:00' and '2019-2-28 23:59:59'")
   end
 
   private

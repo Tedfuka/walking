@@ -5,7 +5,7 @@
 <div>
 <style>
   th:nth-child(1), td:nth-child(1) { padding: 5px; width: 10px; text-align: right;}
-  th:nth-child(2), td:nth-child(2) { padding: 5px; width: 100px; text-align: center;}
+  th:nth-child(2), td:nth-child(2) { padding: 5px; width: 120px; text-align: center;}
   th:nth-child(3), td:nth-child(3) { padding: 5px; width: 10px; text-align: center;}
   th:nth-child(4), td:nth-child(4) { padding: 5px; width: 100px; text-align: right;}
   th:nth-child(5), td:nth-child(5) { padding: 5px; width: 70px; text-align: right;}
@@ -19,7 +19,7 @@
   </thead>
   <tbody>
     <% @users.each do |user, step| %>
-    <tr><td><%= @j %></td><td><%= User.find(user).username %></td><td><%= User.find(user).team %></td><td><%= step.round().to_s(:delimited) %>歩</td><td><%= @date_desc.where(user_id: user).select(:date).order(:date).last.date.strftime("%m-%d") %></td></tr>
+    <tr><td><%= @j %></td><td><%= User.find(user).username %></td><td><%= User.find(user).team %></td><td><%= step.round().to_s(:delimited) %>歩</td><td><%= @date_feb.where(user_id: user).select(:date).order(:date).last.date.strftime("%m-%d") %></td></tr>
     <% @j+=1 %>
     <% end %>
   </tbody>

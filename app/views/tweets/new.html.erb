@@ -1,0 +1,28 @@
+<div class="form_wrap">
+
+<%= render partial: 'layouts/flash' %>
+
+<%= form_for @tweet do |f| %>
+
+<div class="input-field">
+  <%= f.label :つぶやき %>
+  <%= f.text_field :tweet %>
+</div>
+
+<div class="actions center">
+  <%= f.submit "✉️", :style=>"font-size: 2em;" %>
+</div>
+
+<% end %>
+
+</div>
+
+<div class="form_wrap">
+
+<div class="left">
+<% @tweets.order('created_at DESC').each do |tweet| %>
+<p>👣<%= tweet.tweet %><br><%= @users.find_by(id: tweet.user_id).username %> （<%= tweet.created_at.strftime("%m-%d %H:%M") %>）</p>
+<% end %>
+</div>
+
+</div>

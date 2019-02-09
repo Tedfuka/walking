@@ -12,14 +12,14 @@ class StepsController < ApplicationController
 
   def new
     @step = Step.new
-    @steps = Step.where(user_id: current_user.id).where("date between '2019-02-01 00:00:00' and '2019-2-28 23:59:59'").order('date ASC')
+    @steps = Step.where(user_id: current_user.id).where("date between '2019-02-01 00:00:00' and '2019-2-28 23:59:59'").order('date DESC')
     @step_sum = @steps.sum(:step)
     @date_count = 28 - @steps.count(:date)
   end
 
   def create
     @step = Step.new(step_params)
-    @steps = Step.where(user_id: current_user.id).where("date between '2019-02-01 00:00:00' and '2019-2-28 23:59:59'").order('date ASC')
+    @steps = Step.where(user_id: current_user.id).where("date between '2019-02-01 00:00:00' and '2019-2-28 23:59:59'").order('date DESC')
     if @step.save
     redirect_to new_step_path, notice: "登録完了しました"
     else

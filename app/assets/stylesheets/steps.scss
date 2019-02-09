@@ -47,17 +47,48 @@ input.btn {
 
 .form_wrap {
   width: 500px;
-  margin: 15px auto 0;
+  margin: 71px auto 0;
 }
 
 .wrap {
   width: 280px;
-  margin: 15px auto 0;
+  margin: 71px auto 0;
 }
 
 .actions {
   margin-top: 10px;
   margin-bottom: 15px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+footer {
+  background-color: #1565c0;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 0;
+  height:56px;
+  width: 100%;
+  z-index: 1;
+}
+
+.footer-copyright{
+  color: #fff;
+}
+
+.container {
+    color: #fff;
+}
+
+.sidenav {
+  z-index: 3;
 }
 
 p.center {
@@ -97,7 +128,7 @@ table.yyy td.ccc {
   }
   .form_wrap {
     width: 90%;
-    margin: 30px auto 0;
+    margin: 71px auto 0;
   }
 }
 

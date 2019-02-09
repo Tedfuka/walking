@@ -10,18 +10,14 @@
 </div>
 
 <div class="actions center">
-  <%= f.submit "✉️", :style=>"font-size: 2em;" %>
+  <%= f.submit "つぶやく"%>
 </div>
 
 <% end %>
 
-</div>
-
-<div class="form_wrap">
-
 <div class="left">
 <% @tweets.order('created_at DESC').each do |tweet| %>
-<p>👣<%= tweet.tweet %><br><%= @users.find_by(id: tweet.user_id).username %> （<%= tweet.created_at.strftime("%m-%d %H:%M") %>）</p>
+<p><span style="font-size: 120%">👣</span><%= tweet.tweet %><br><%= @users.find_by(id: tweet.user_id).username %> （<%= tweet.created_at.strftime("%m-%d %H:%M") %>）</p>
 <% end %>
 </div>
 

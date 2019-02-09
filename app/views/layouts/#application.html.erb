@@ -14,33 +14,34 @@
                      {:rel => 'apple-touch-icon',
                       :sizes => '180x180',
                       :type => 'image/png'}) %>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--  <link rel="apple-touch-icon" sizes="180x180" href="app/assets/images/apple-touch-icon-180x180.png">-->
  </head>
   <body>
     <header>
       <nav class="#1565c0 blue darken-3">
         <div class="nav-wrapper">
-<!--           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fas fa-bars"></i></a> -->
-          <a href="/"class="brand-logo center p_title"><b>WALKING AKB</b></a>
+          <a href="/" class="brand-logo center p_title"><b>WALKING AKB</b></a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fas fa-bars"></i></a>
       <% if user_signed_in? %>
-
-<!--           <li><a href="/steps/current_user.id"><i class="material-icons">group</i></a></li>
-          <li><a href="/tweets/new"><i class="material-icons">comment</i></a></li> -->
-        </ul>
-        <ul class="left">
-<!--           <li><a href="/steps/new"><i class="material-icons">directions_walk</i></a></li> -->
-          <li><a href="/users/sign_out"><i class="material-icons">exit_to_app</i></a></li>
-        </ul>
-      <% else %>
-        <ul class="left">
-          <li><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
-        </ul>
-        <ul class="right">
-          <li><%= link_to "新規登録", new_user_registration_path, class: 'post' %></li>
-        </ul>
-
+          <ul class="right">
+          <li><%= link_to '👟', new_step_path(current_user.id), method: :get, :style=>"font-size: 2em;" %></li>
+          </ul>
       <% end %>
-<!--           <ul class="side-nav" id="mobile-demo">
+          <ul class="left hide-on-med-and-down">
+      <% if user_signed_in? %>
+        <div class="user_nav grid-6">
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to 'みんなの歩数', step_path(current_user.id), method: :get %></li>
+          <li><%= link_to 'みんなの広場', new_tweet_path, method: :get %></li>
+          </div>
+      <% else %>
+        <div class="grid-6">
+          <li><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
+          <li><%= link_to "新規登録", new_user_registration_path, class: 'post' %></li>
+        </div>
+      <% end %>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
       <% if user_signed_in? %>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
           <li><%= link_to 'みんなの歩数', step_path(current_user.id), method: :get %></li>
@@ -50,20 +51,14 @@
           <li><%= link_to "新規登録", new_user_registration_path, class: 'post' %></li>
       <% end %>
           </ul>
- -->        </div>
+        </div>
       </nav>
     </header>
     <%= yield %>
     <footer>
-<!--         <ul class="left">
-          <li margin-topa="15px">　© 2019 Copyright WALKING AKB</li>
-        </ul> -->
-      <% if user_signed_in? %>
-<ul class="center">
-      <a href="/steps/current_user.id"><i class="material-icons white-text">group</i></a>　　　　　<a href="/steps/new"><i class="material-icons white-text">directions_walk</i></a>　　　　　<a href="/tweets/new"><i class="material-icons white-text">comment</i></a>
-</ul>
-
-      <% end %>
+      <div class="#1565c0 blue darken-3">
+          <p class="center"><b>平均10,000歩を目指そう！</b></p>
+      </div>
     </footer>
   </body>
 </html>

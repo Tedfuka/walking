@@ -48,11 +48,21 @@ input.btn {
 .form_wrap {
   width: 500px;
   margin: 71px auto 0;
+  margin-bottom: 56px !important;
+}
+
+input#step_date {
+  margin-bottom: 0;
+}
+
+input#step_step {
+  margin-bottom: 10px;
 }
 
 .wrap {
   width: 280px;
   margin: 71px auto 0;
+  margin-bottom: 56px;
 }
 
 .actions {
@@ -101,26 +111,31 @@ p.center2 {
 }
 
 table.yyy tbody.zzz {
-  height: 100px;
+  height: 75px;
 }
 
 table.yyy td.aaa {
-  padding: 5px;
+  padding: 2px;
   width: 50px;
   text-align: right;
 }
 
 table.yyy td.bbb {
-  padding: 5px;
+  padding: 2px;
   width: 160px;
   text-align: center;
 }
 
 table.yyy td.ccc {
-  padding: 5px;
+  padding: 2px;
   width: 80px;
   text-align: right;
 }
+
+// tbody.xxx {
+//   margin-bottom: 56px;
+// }
+
 
 @media only screen and (max-width:600px){
   .p_title {

@@ -2,6 +2,29 @@
 
 <%= render partial: 'layouts/flash' %>
 
+<!-- <div class="left">
+ -->
+<div>
+<style>
+  th:nth-child(1), td:nth-child(1) { padding: 5px; width: 320px; text-align: left;}
+  thead, tbody { display: block; }
+  tbody { margin-bottom: 15px; height: 310px; background-color: #f5f5f5; overflow-y: scroll; }
+</style>
+<table width="100%" border="1px" cellpadding="1px" style="border-collapse: collapse;">
+  <thead>
+    <!--<tr bgcolor="#81d4fa"><th class="center">順位</th><th class="center">名前</th><th class="center">歩数</th><th class="center">チーム</th></tr>-->
+  </thead>
+  <tbody>
+
+<% @tweets.order('created_at DESC').each do |tweet| %>
+<tr><td><span style="font-size: 120%">👣</span><%= tweet.tweet %><br><%= @users.find_by(id: tweet.user_id).username %> （<%= tweet.created_at.strftime("%m-%d %H:%M") %>) </td></tr>
+<% end %>
+
+  </tbody>
+</table>
+</div>
+<!-- </div> -->
+
 <%= form_for @tweet do |f| %>
 
 <div class="input-field">
@@ -14,11 +37,5 @@
 </div>
 
 <% end %>
-
-<div class="left">
-<% @tweets.order('created_at DESC').each do |tweet| %>
-<p><span style="font-size: 120%">👣</span><%= tweet.tweet %><br><%= @users.find_by(id: tweet.user_id).username %> （<%= tweet.created_at.strftime("%m-%d %H:%M") %>）</p>
-<% end %>
-</div>
 
 </div>

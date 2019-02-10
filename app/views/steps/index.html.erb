@@ -23,22 +23,22 @@
 
 <div>
 <style>
-  th:nth-child(1), td:nth-child(1) { padding: 5px; width: 10px; text-align: right;}
-  th:nth-child(2), td:nth-child(2) { padding: 5px; width: 120px; text-align: center;}
-  th:nth-child(3), td:nth-child(3) { padding: 5px; width: 10px; text-align: center;}
-  th:nth-child(4), td:nth-child(4) { padding: 5px; width: 100px; text-align: right;}
-  th:nth-child(5), td:nth-child(5) { padding: 5px; width: 70px; text-align: right;}
+  th:nth-child(1), td:nth-child(1) { padding: 2px; width: 10px; text-align: right;}
+  th:nth-child(2), td:nth-child(2) { padding: 2px; width: 120px; text-align: center;}
+  th:nth-child(3), td:nth-child(3) { padding: 2px; width: 10px; text-align: center;}
+  th:nth-child(4), td:nth-child(4) { padding: 2px; width: 100px; text-align: right;}
+  th:nth-child(5), td:nth-child(5) { padding: 2px; width: 70px; text-align: right;}
   thead, tbody { display: block; }
-  tbody { height: 100%; overflow-y: scroll; }
+  tbody { height: 100%; overflow-y: scroll;}
 </style>
   <p class="center"><span style="font-size: 1.5em">🏃‍</span>神セブン(総得票数)</p>
 <table width="100%" border="1px" cellpadding="1px" style="border-collapse: collapse;">
   <thead>
     <!--<tr bgcolor="#81d4fa"><th class="center">順位</th><th class="center">名前</th><th class="center">歩数</th><th class="center">チーム</th></tr>-->
   </thead>
-  <tbody>
+  <tbody class="xxx">
     <% @users.first(7).each do |user, step| %>
-    <tr><td><%= @j %></td><td><%= User.find(user).username %></td><td><%= User.find(user).team %></td><td><%= step.round().to_s(:delimited) %>歩</td><td><%= @date_feb.where(user_id: user).select(:date).order(:date).last.date.strftime("%m-%d") %></td></tr>
+    <tr><td><%= @j %></td><td><%= User.find(user).username %></td><td><%= User.find(user).team %></td><td><%= step.round().to_s(:delimited) %>票</td><td><%= @date_feb.where(user_id: user).select(:date).order(:date).last.date.strftime("%m-%d") %></td></tr>
     <% @j+=1 %>
     <% end %>
 

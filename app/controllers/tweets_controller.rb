@@ -7,6 +7,7 @@ class TweetsController < ApplicationController
     @users = User.all
     @tweets = Tweet.all
     @tweet = Tweet.new
+    @i = 0
   end
 
   def create
